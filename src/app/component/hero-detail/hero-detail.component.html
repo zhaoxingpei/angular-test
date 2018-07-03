@@ -1,0 +1,23 @@
+<h2 class="center">hero Detail（我是子组件）</h2>
+<div *ngIf="heroDetail; else elseNoData" class="heroDetail">
+  <p>
+      <!-- 使用管道符，这里是内置管道uppercase
+        管道是格式化字符串、金额、日期等数据的好方法
+      -->
+      姓名: {{heroDetail.name | uppercase}}
+    </p>
+    <p>年龄: {{heroDetail.id}}</p>
+    
+    <!-- [(ngModel)]是Angular双向数据绑定语法，默认不可使用，所以去app.module.ts中导入FormsModule -->
+    <div>
+      <label>
+        姓名:
+        <input type="text" [(ngModel)] = "heroDetail.name" placeholder="请输入姓名">
+      </label>
+    </div>
+</div>
+<ng-template #elseNoData>
+  <div class="noData center">
+    <p>暂无选中数据</p>
+  </div>
+</ng-template>

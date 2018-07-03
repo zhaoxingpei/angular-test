@@ -13,5 +13,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = '第一次学习Angular';
+  title = 'Angular 父子组件';
 }

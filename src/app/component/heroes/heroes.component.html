@@ -1,0 +1,13 @@
+<!-- *ngFor遍历列表 -->
+<h2 class="center">mock-heroes数据列表（我是父组件）</h2>
+<ul>
+  <li *ngFor="let hero of heroes" (click)="onSelect(hero)" [class.selectedHero]="hero === selectedHero">
+    id: {{hero.id}}
+    name: {{hero.name}}
+  </li>
+</ul>
+<p *ngIf="selectedHero">当前选中的姓名：{{selectedHero.name}}</p>
+
+
+<!-- 引用子组件详情，子组件接收属性为heroDetail的值（父组件给子组件传值） -->
+<app-hero-detail [heroDetail]="selectedHero"></app-hero-detail>
